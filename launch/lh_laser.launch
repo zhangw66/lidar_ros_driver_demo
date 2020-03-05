@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+	<node pkg="lh_lidar_driver" type="lh_lidar_node" name="lh_lidar" output="screen" >
+		<param name="frame_id" type="string" value="lh_lidar" />
+		<param name="port" type="string" value="/dev/ttyUSB0" />
+    	<param name="baud_rate" type="int" value="230400" />
+    	<param name="firmware_version" type="string" value="2" />
+	</node>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find lh_lidar_driver)/launch/default.rviz" output="screen"/>
+</launch>
+
